@@ -13,6 +13,7 @@ class Counter extends Component {
   }
 }
 
+
 export default connect(
   state => state.counter,
   counter

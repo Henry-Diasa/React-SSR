@@ -4,6 +4,9 @@ import { Route } from 'react-router-dom';
 import Counter from './container/Counter';
 import Home from './container/Home';
 import App from './container/App';
+import Login from './container/Login';
+import Logout from './container/Logout';
+import Profile from './container/Profile';
 
 
 /* 很深的 无限嵌套的 递归结构 */
@@ -26,6 +29,21 @@ export default [
         path: '/counter',
         component: Counter,
         key: '/counter'
+      },
+      {
+        path: '/login',
+        component: Login,
+        key: '/login'
+      },
+      {
+        path: '/logout',
+        component: Logout,
+        key: '/logout'
+      },
+      {
+        path: '/profile',
+        component: Profile,
+        key: '/profile'
       },
     ]
   }

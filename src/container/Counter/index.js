@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import counter from '../../store/actions/counter';
 class Counter extends Component {
   render() {
-    console.dir(this);
     return (
       <div>
         <button onClick={this.props.increment}>点我+1</button><br />
@@ -12,7 +11,6 @@ class Counter extends Component {
     );
   }
 }
-
 
 export default connect(
   state => state.counter,

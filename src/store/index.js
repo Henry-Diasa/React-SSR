@@ -15,5 +15,9 @@ export function getServerStore() {
 }
 
 export function getClientStore() {
-  return createStore(reducers, applyMiddleware(thunk, logger))
+  let initState = window.context.state
+  console.dir(initState);
+
+  // createSotre 中间穿的值.
+  return createStore(reducers, initState, applyMiddleware(thunk, logger))
 }

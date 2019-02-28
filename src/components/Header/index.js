@@ -23,9 +23,14 @@ class Header extends Component {
               }
 
             </ul>
-            <ul className="nav navbar-nav navbar-right">
-              <li>{this.props.user ? this.props.user.username : <Link to="/login">登录</Link>}</li>
-            </ul>
+            {
+              this.props.user && (
+                <ul className="nav navbar-nav navbar-right">
+                  <li><a>{this.props.user.username}</a></li>
+                </ul>
+              )
+            }
+
           </div>
         </div>
       </nav>

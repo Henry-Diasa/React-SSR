@@ -14,7 +14,7 @@ export default [
   {
     path: '/',
     component: App,
-    // loadData:App.loadData,
+    loadData:App.loadData,
     //子路由
     key: '/app',
     routes: [

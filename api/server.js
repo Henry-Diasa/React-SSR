@@ -35,7 +35,7 @@ app.post('/api/login', (req, res) => {
 })
 
 app.get('/api/logout', (req, res) => {
-  req.session.user = user
+  req.session.user = null
   res.json({
     code: 0,
     data: {

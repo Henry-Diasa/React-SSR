@@ -10,7 +10,8 @@ import { Provider } from 'react-redux';
 import { getServerStore } from '../store';
 
 export default (req, res) => {
-  let store = getServerStore()
+  /* 通过这样 一步 一步的 传  只是为了把  req 带到  axios的里面 去调一个 req.get('cookie') */
+  let store = getServerStore(req)
   //这个方法可以处理嵌套路由
   /* 这边的 matchRoutes 也不是一步到位的. */
   // let matchRoutes = matchRoutes(routes, req.path)

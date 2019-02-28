@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom'
 import { renderRoutes, matchRoutes } from 'react-router-config'
 import Header from '../components/Header';
+import actions from '../store/actions/session';
 
 class App extends Component {
   render() {
@@ -21,6 +22,10 @@ class App extends Component {
       </Fragment>
     );
   }
+}
+
+App.loadData = function(store){
+  return store.dispatch(actions.getUser());
 }
 
 export default App

@@ -1,15 +1,21 @@
 import React, { Component, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Profile extends Component {
-
+class Profile extends Component {
   render() {
-
     return (
-      <div className="row">
-        <div className="col-md-6 col-md-offset-3">
-          个人中心
+      this.props.user ?
+        (<div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            个人中心
         </div>
-      </div>
+        </div>) :
+        <Redirect to="/login" />
     )
   }
 }
+
+export default connect(
+  state => state.session
+)(Profile)

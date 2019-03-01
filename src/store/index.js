@@ -11,13 +11,26 @@ import createServerRequest from '../server/request';
 */
 
 export function getServerStore(req) {
-  return createStore(reducers, applyMiddleware(thunk.withExtraArgument(createServerRequest(req)), logger))
+  return createStore(reducers, applyMiddleware(thunk.withExtraArgument(createServerRequest(req))))
 }
 
 export function getClientStore() {
   let initState = window.context.state
-  console.dir(initState);
+  // console.dir(initState);
 
   // createSotre 中间穿的值.
-  return createStore(reducers, initState, applyMiddleware(thunk.withExtraArgument(clientRequest), logger))
+  return createStore(reducers, initState, applyMiddleware(thunk.withExtraArgument(clientRequest)))
 }
+
+
+// export function getServerStore(req) {
+//   return createStore(reducers, applyMiddleware(thunk.withExtraArgument(createServerRequest(req)), logger))
+// }
+
+// export function getClientStore() {
+//   let initState = window.context.state
+//   // console.dir(initState);
+
+//   // createSotre 中间穿的值.
+//   return createStore(reducers, initState, applyMiddleware(thunk.withExtraArgument(clientRequest), logger))
+// }

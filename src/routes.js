@@ -7,6 +7,7 @@ import App from './container/App';
 import Login from './container/Login';
 import Logout from './container/Logout';
 import Profile from './container/Profile';
+import NotFound from './container/NotFound';
 
 
 /* 很深的 无限嵌套的 递归结构 */
@@ -44,6 +45,10 @@ export default [
         path: '/profile',
         component: Profile,
         key: '/profile'
+      },
+      {
+        component: NotFound,
+        key: '/notfound'
       },
     ]
   }

@@ -1957,7 +1957,7 @@ hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "http://r.cnpmjs.org/hoist-non-react-statics/download/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
-hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
   version "3.3.0"
   resolved "http://r.cnpmjs.org/hoist-non-react-statics/download/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
   dependencies:
@@ -2226,6 +2226,14 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "http://r.cnpmjs.org/isobject/download/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
+isomorphic-style-loader@^5.0.1:
+  version "5.0.1"
+  resolved "http://r.cnpmjs.org/isomorphic-style-loader/download/isomorphic-style-loader-5.0.1.tgz#904843486ade98f647c9d2421dcf5b9cd4613b37"
+  dependencies:
+    hoist-non-react-statics "^3.0.0"
+    loader-utils "^1.2.3"
+    react "^16.3.0"
+
 js-levenshtein@^1.1.3:
   version "1.1.6"
   resolved "http://r.cnpmjs.org/js-levenshtein/download/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
@@ -2305,7 +2313,7 @@ loader-runner@^2.3.0:
   version "2.4.0"
   resolved "http://r.cnpmjs.org/loader-runner/download/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
 
-loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.1:
+loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.1, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "http://r.cnpmjs.org/loader-utils/download/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   dependencies:
@@ -3129,7 +3137,7 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react@^16.8.3:
+react@^16.3.0, react@^16.8.3:
   version "16.8.3"
   resolved "http://r.cnpmjs.org/react/download/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
   dependencies:

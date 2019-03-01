@@ -4,8 +4,19 @@ import { renderRoutes, matchRoutes } from 'react-router-config'
 import Header from '../components/Header';
 import actions from '../store/actions/session';
 import styles from './App.css';
-import withStyle from '../withStyle';
+
 class App extends Component {
+
+  componentWillMount() {
+    console.dir('app');
+    console.dir(this.props);
+    if (this.props.staticContext) {
+      // 这个_getCss 方法就是 靠的  isomorphic-style-loader
+      this.props.staticContext.csses.push(styles._getCss())
+    }
+  }
+
+
   render() {
     return (
       <Fragment>
@@ -30,4 +41,4 @@ App.loadData = function (store) {
   return store.dispatch(actions.getUser());
 }
 
-export default withStyle(App, styles)
+export default App

@@ -30,7 +30,6 @@ class Home extends Component {
               ))
             }
           </ul>
-          <div>33333</div>
         </div>
       </div>
     );

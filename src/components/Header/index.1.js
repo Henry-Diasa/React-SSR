@@ -2,9 +2,18 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styles from './index.css';
-import withStyle from '../../withStyle';
 
 class Header extends Component {
+  componentWillMount() {
+    console.dir('header');
+    console.dir(this.props);
+    if (this.props.staticContext) {
+      console.log('进来了');
+      // 这个_getCss 方法就是 靠的  isomorphic-style-loader
+      this.props.staticContext.csses.push(styles._getCss())
+    }
+  }
+
 
   render() {
     return (
@@ -42,11 +51,11 @@ class Header extends Component {
 }
 
 
-Header = connect(
+export default connect(
   state => state.session
 )(Header)
 
-export default withStyle(Header, styles)
+
 
 
 /* 

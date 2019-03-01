@@ -13,6 +13,15 @@ module.exports = smart(base, {
   externals: [nodeExternals()],
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ['isomorphic-style-loader', {
+          loader: 'css-loader',
+          options: {
+            modules: true
+          }
+        }]
+      }
     ]
   }
 })

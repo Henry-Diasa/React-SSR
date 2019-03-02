@@ -7,7 +7,9 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter, Route, matchPath } from 'react-router-dom'
 import { renderRoutes, matchRoutes } from 'react-router-config'
 import { Provider } from 'react-redux';
+import { Helmet } from 'react-helmet'
 import { getServerStore } from '../store';
+
 
 export default (req, res) => {
   /* 通过这样 一步 一步的 传  只是为了把  req 带到  axios的里面 去调一个 req.get('cookie') */
@@ -61,6 +63,7 @@ export default (req, res) => {
     // 才会 去读 if(this.props.staticContext) 才会往对象里面 push 值/
     
     let cssStr = context.csses.join('\n')
+    let helmet = Helmet.renderStatic()
     /* 
       这边的 context 也值得深入研究的
      */
@@ -84,7 +87,8 @@ export default (req, res) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
-      <title>SSR</title>
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
       <style>${cssStr}</style>
     </head>
     <body>

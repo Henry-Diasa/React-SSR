@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet'
 import home from '../../store/actions/home';
 class Home extends Component {
   state = { name: 'home' }
@@ -21,17 +22,23 @@ class Home extends Component {
     } */
   render() {
     return (
-      <div className="row">
-        <div className="col-md-6 col-md-offset-3">
-          <ul className="list-group">
-            {
-              this.props.list.map(item => (
-                <li key={item.id} className="list-group-item">{item.name}</li>
-              ))
-            }
-          </ul>
+      <Fragment>
+        <Helmet>
+          <title>首页标题</title>
+          <meta name="description" content="首页描述" />
+        </Helmet>
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            <ul className="list-group">
+              {
+                this.props.list.map(item => (
+                  <li key={item.id} className="list-group-item">{item.name}</li>
+                ))
+              }
+            </ul>
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
-
 import Counter from './container/Counter';
 import Home from './container/Home';
 import App from './container/App';

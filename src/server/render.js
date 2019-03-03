@@ -8,7 +8,7 @@ import { StaticRouter, Route, matchPath } from 'react-router-dom'
 import { renderRoutes, matchRoutes } from 'react-router-config'
 import { Provider } from 'react-redux';
 import { Helmet } from 'react-helmet'
-import { getServerStore } from '../store';
+import { getServerStore } from '../store/indexServer';
 
 
 export default (req, res) => {
